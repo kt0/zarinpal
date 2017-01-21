@@ -15,7 +15,7 @@ module Zarinpal
     def initialize(args = {})
       @authority = args.fetch(:authority)
       @amount    = args.fetch(:amount)
-      @client    = Savon.client(wsdl: Zarinpal.configuration.client, pretty_print_xml: true)
+      @client    = Savon.client(Zarinpal.savon_options)
       @response  = Response.new
     end
 

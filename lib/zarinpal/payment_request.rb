@@ -21,7 +21,7 @@ module Zarinpal
       @description = args.fetch(:description)
       @email       = args.fetch(:email, '')
       @mobile      = args.fetch(:mobile, '')
-      @client      = Savon.client(wsdl: Zarinpal.configuration.client, pretty_print_xml: true)
+      @client      = Savon.client(Zarinpal.savon_options)
       @response    = Response.new
     end
 
